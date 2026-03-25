@@ -1,0 +1,25 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="CurbaCoons.MainWindow"
+        Title="Tema 5 - Curbe Coons-Hermite"
+        Width="1100" Height="700"
+        WindowStartupLocation="CenterScreen">
+    <DockPanel>
+        <StackPanel DockPanel.Dock="Left" Width="260" Background="#F0F0F0"
+                    Margin="8">
+            <TextBlock Text="Curbe Coons-Hermite" FontWeight="Bold"
+                       FontSize="16" Margin="8,8,8,4"/>
+            <Separator Margin="8,0"/>
+            <TextBlock x:Name="LblInfo" TextWrapping="Wrap" Margin="8"
+                       FontSize="12"
+                       Text="Click stanga = adauga punct&#10;Click dreapta = finalizeaza (nr. par de puncte)&#10;&#10;Dupa finalizare:&#10;  Drag pe un punct = muta-l&#10;  Curba se redeseneaza local&#10;&#10;Obs: Punctele de pe pozitiile pare (0,2,4,...) sunt puncte prin care trece curba. Punctele de pe pozitiile impare (1,3,5,...) definesc tangentele."/>
+            <Separator Margin="8,4"/>
+            <TextBlock x:Name="LblStatus" TextWrapping="Wrap" Margin="8"
+                       FontSize="12" Foreground="DarkBlue"
+                       Text="Puncte: 0"/>
+            <Button x:Name="BtnReset" Content="Resetare (sterge tot)"
+                    Margin="8" HorizontalAlignment="Stretch"/>
+        </StackPanel>
+        <Canvas x:Name="DrawCanvas" Background="White"/>
+    </DockPanel>
+</Window>
