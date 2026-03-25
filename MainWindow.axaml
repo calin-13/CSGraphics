@@ -1,25 +1,59 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        x:Class="CurbaCoons.MainWindow"
-        Title="Tema 5 - Curbe Coons-Hermite"
-        Width="1100" Height="700"
-        WindowStartupLocation="CenterScreen">
-    <DockPanel>
-        <StackPanel DockPanel.Dock="Left" Width="260" Background="#F0F0F0"
-                    Margin="8">
-            <TextBlock Text="Curbe Coons-Hermite" FontWeight="Bold"
-                       FontSize="16" Margin="8,8,8,4"/>
-            <Separator Margin="8,0"/>
-            <TextBlock x:Name="LblInfo" TextWrapping="Wrap" Margin="8"
-                       FontSize="12"
-                       Text="Click stanga = adauga punct&#10;Click dreapta = finalizeaza (nr. par de puncte)&#10;&#10;Dupa finalizare:&#10;  Drag pe un punct = muta-l&#10;  Curba se redeseneaza local&#10;&#10;Obs: Punctele de pe pozitiile pare (0,2,4,...) sunt puncte prin care trece curba. Punctele de pe pozitiile impare (1,3,5,...) definesc tangentele."/>
-            <Separator Margin="8,4"/>
-            <TextBlock x:Name="LblStatus" TextWrapping="Wrap" Margin="8"
-                       FontSize="12" Foreground="DarkBlue"
-                       Text="Puncte: 0"/>
-            <Button x:Name="BtnReset" Content="Resetare (sterge tot)"
-                    Margin="8" HorizontalAlignment="Stretch"/>
-        </StackPanel>
-        <Canvas x:Name="DrawCanvas" Background="White"/>
-    </DockPanel>
+        x:Class="CurbeParametrice.MainWindow"
+        Title="Tema 2 - Curbe Parametrice cu Transformari"
+        Width="1200" Height="800"
+        MinWidth="1000" MinHeight="700"
+        Background="#F5F5FA">
+
+    <Grid ColumnDefinitions="340,*">
+
+        <Border Grid.Column="0" Background="White" BorderBrush="#DDD" BorderThickness="0,0,1,0" Padding="12">
+            <ScrollViewer>
+                <StackPanel Spacing="8">
+
+                    <TextBlock Text="⚙ Configurare" FontSize="18" FontWeight="Bold" Foreground="#1E1E50" Margin="0,0,0,8"/>
+
+                    <TextBlock Text="Curba parametrica:" FontWeight="SemiBold"/>
+                    <ComboBox x:Name="ComboCurbe" HorizontalAlignment="Stretch"/>
+
+                    <TextBlock Text="Rezolutie (nr. puncte):" FontWeight="SemiBold" Margin="0,4,0,0"/>
+                    <NumericUpDown x:Name="NumRezolutie" Minimum="50" Maximum="10000" Value="500" Width="160" HorizontalAlignment="Left"/>
+
+                    <CheckBox x:Name="ChkOriginal" Content="Afiseaza si curba originala" IsChecked="True" Margin="0,4,0,0"/>
+
+                    <Separator Margin="0,8"/>
+
+                    <TextBlock Text="Adauga transformare:" FontWeight="SemiBold"/>
+                    <ComboBox x:Name="ComboTransformare" HorizontalAlignment="Stretch"/>
+
+                    <Grid ColumnDefinitions="Auto,80,20,Auto,80" Margin="0,4,0,0">
+                        <TextBlock x:Name="LblParam1" Grid.Column="0" Text="tx:" VerticalAlignment="Center" Margin="0,0,6,0"/>
+                        <TextBox x:Name="TxtParam1" Grid.Column="1" Text="50"/>
+                        <TextBlock x:Name="LblParam2" Grid.Column="3" Text="ty:" VerticalAlignment="Center" Margin="6,0,6,0"/>
+                        <TextBox x:Name="TxtParam2" Grid.Column="4" Text="50"/>
+                    </Grid>
+
+                    <StackPanel Orientation="Horizontal" Spacing="8" Margin="0,8,0,0">
+                        <Button x:Name="BtnAdauga" Content="+ Adauga" Background="#3C78C8" Foreground="White" FontWeight="Bold" Width="150" HorizontalContentAlignment="Center"/>
+                        <Button x:Name="BtnSterge" Content="✕ Sterge selectata" Background="#C83C3C" Foreground="White" FontWeight="Bold" Width="155" HorizontalContentAlignment="Center"/>
+                    </StackPanel>
+
+                    <TextBlock Text="Transformari aplicate (in ordine):" FontWeight="SemiBold" Margin="0,8,0,0"/>
+                    <ListBox x:Name="ListTransformari" Height="130"/>
+
+                    <StackPanel Orientation="Horizontal" Spacing="8" Margin="0,8,0,0">
+                        <Button x:Name="BtnDeseneaza" Content="▶ Deseneaza" Background="#28A050" Foreground="White" FontWeight="Bold" FontSize="14" Width="155" Height="38" HorizontalContentAlignment="Center"/>
+                        <Button x:Name="BtnReset" Content="↺ Reset" Background="#787878" Foreground="White" FontWeight="Bold" FontSize="14" Width="155" Height="38" HorizontalContentAlignment="Center"/>
+                    </StackPanel>
+
+                </StackPanel>
+            </ScrollViewer>
+        </Border>
+
+        <Border Grid.Column="1" Background="White" Margin="4">
+            <Canvas x:Name="CanvasDesenar" ClipToBounds="True"/>
+        </Border>
+
+    </Grid>
 </Window>

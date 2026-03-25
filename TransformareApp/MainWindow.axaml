@@ -1,0 +1,31 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="TransformareApp.MainWindow"
+        Title="Transformari 2D - Grafica pe Calculator"
+        Width="1100" Height="750"
+        Background="White">
+
+    <DockPanel>
+        <StackPanel DockPanel.Dock="Top" Background="#F0F0F5" Height="80">
+            <TextBlock x:Name="LblInfo"
+                       Text="Click stanga = adauga punct | Click dreapta = inchide poligon"
+                       FontSize="14" FontWeight="Bold" Foreground="DarkBlue"
+                       Margin="10,6,0,0"/>
+            <TextBlock x:Name="LblMod"
+                       Text="Mod: Construire poligon"
+                       FontSize="12" Foreground="DarkRed"
+                       Margin="10,2,0,0"/>
+            <StackPanel Orientation="Horizontal" Margin="10,6,0,0" Spacing="5">
+                <Button x:Name="BtnRotatie" Content="Rotatie (R)" Width="100" Height="26" FontSize="11"/>
+                <Button x:Name="BtnTranslatie" Content="Translatie (T)" Width="110" Height="26" FontSize="11"/>
+                <Button x:Name="BtnScalare" Content="Scalare (S)" Width="100" Height="26" FontSize="11"/>
+                <Button x:Name="BtnSimetrie" Content="Simetrie (D)" Width="110" Height="26" FontSize="11"/>
+                <Button Width="10" IsEnabled="False" Background="Transparent" BorderThickness="0"/>
+                <Button x:Name="BtnReset" Content="Reset Transf." Width="110" Height="26" FontSize="11" Background="#FFC8C8"/>
+                <Button x:Name="BtnSterge" Content="Sterge Tot" Width="100" Height="26" FontSize="11" Background="#FF9696"/>
+            </StackPanel>
+        </StackPanel>
+        
+        <Canvas x:Name="DrawCanvas" Background="White"/>
+    </DockPanel>
+</Window>
