@@ -1,0 +1,14 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:Poligon"
+        x:Class="Poligon.MainWindow"
+        Width="900" Height="650"
+        Title="Poligon - Apartenenta punct la interior">
+    <DockPanel>
+        <Border DockPanel.Dock="Top" Background="#1E1E1E" Padding="12,8">
+            <TextBlock Foreground="#DDD" FontSize="12"
+                       Text="Click stanga: adauga varf    |    Click pe primul varf (portocaliu): inchide poligonul    |    Drag in interior: translatie    |    Click dreapta: reset"/>
+        </Border>
+        <local:DrawingSurface />
+    </DockPanel>
+</Window>
