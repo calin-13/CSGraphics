@@ -1,0 +1,26 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:CurbeleB_Spine"
+        x:Class="CurbeleB_Spine.MainWindow"
+        Width="900" Height="650"
+        Title="Curbe B-Spline - Tema 7">
+    <DockPanel>
+        <Border DockPanel.Dock="Top" Background="#1E1E1E" Padding="12,8">
+            <StackPanel Orientation="Horizontal" Spacing="14">
+                <TextBlock Foreground="#DDD" VerticalAlignment="Center" FontSize="12"
+                           Text="Click stanga: adauga / muta punct   |   Click dreapta: reseteaza"/>
+                <Border Background="DarkOrange"   Width="14" Height="14" CornerRadius="2"/>
+                <TextBlock Foreground="#DDD" VerticalAlignment="Center" Text="k=1"/>
+                <Border Background="SeaGreen"     Width="14" Height="14" CornerRadius="2"/>
+                <TextBlock Foreground="#DDD" VerticalAlignment="Center" Text="k=2"/>
+                <Border Background="DarkRed"      Width="14" Height="14" CornerRadius="2"/>
+                <TextBlock Foreground="#DDD" VerticalAlignment="Center" Text="k=3"/>
+                <Border Background="#663399" Width="14" Height="14" CornerRadius="2"/>
+                <TextBlock Foreground="#DDD" VerticalAlignment="Center" Text="k=4"/>
+                <Border Background="LightSkyBlue" Width="14" Height="14" CornerRadius="2"/>
+                <TextBlock Foreground="#DDD" VerticalAlignment="Center" Text="poligon"/>
+            </StackPanel>
+        </Border>
+        <local:DrawingSurface />
+    </DockPanel>
+</Window>
